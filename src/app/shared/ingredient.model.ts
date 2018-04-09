@@ -3,7 +3,7 @@ export class Ingredient {
     public amount: number;
 
     constructor(obj?: Ingredient) {
-        this.name = obj.name || '';
-        this.amount = obj.amount || 0;
+        this.name = obj && obj.name || '';
+        this.amount = obj && obj.amount || 0;
     }
 }
