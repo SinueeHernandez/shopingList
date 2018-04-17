@@ -22,8 +22,14 @@ export class ShoppingListService {
   public getIngridients(): Array<Ingredient> {
     return this.ingredients.slice();
   }
+
   public addIngredient (ingredient: Ingredient) {
     this.ingredients.push(ingredient);
+    this.ingredientModified.emit(this.ingredients);
+  }
+
+  public addIngredients (ingredients: Array<Ingredient>) {
+    this.ingredients.push(...ingredients);
     this.ingredientModified.emit(this.ingredients);
   }
 
