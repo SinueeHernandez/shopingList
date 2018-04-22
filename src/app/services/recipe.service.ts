@@ -12,7 +12,8 @@ export class RecipeService {
     this.recipes.push(new Recipe({
       name: 'Some Recipe',
       description: 'Hamburger',
-      imagePath : 'https://fthmb.tqn.com/HEbGAFMq0PxbLMd3_Ooedlv_sCY=/3000x2000/filters:fill(auto,1)/Hamburger-Hot-Dog-58add5f03df78c345bdef6ff.jpg',
+      imagePath :
+      'https://fthmb.tqn.com/HEbGAFMq0PxbLMd3_Ooedlv_sCY=/3000x2000/filters:fill(auto,1)/Hamburger-Hot-Dog-58add5f03df78c345bdef6ff.jpg',
       ingridients: [
         new Ingredient({name: 'Beef Steak', amount: 10}),
         new Ingredient({name: 'tomatoe', amount: 3}),
