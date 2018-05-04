@@ -34,12 +34,14 @@
         <li>
           <a
           style="cursor: pointer;"
+          (click)="onDelete()"
           >Delete</a>
         </li>
       </ul>
     </div>
   </div>
 </div>
+<hr>
 <div class="row">
   <div class="col-xs-12">
     {{recipe.description}}
@@ -50,7 +52,7 @@
     <ul class="list-group">
       <li 
       class="list-group-item"
-      *ngFor="let ingridient of recipe.ingridients">
+      *ngFor="let ingridient of recipe.ingredients">
       {{ ingridient.name }} - {{ ingridient.amount }}
     </li>
     </ul>
