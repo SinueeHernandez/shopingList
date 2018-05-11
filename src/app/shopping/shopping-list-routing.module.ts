@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+
 import { ShoppingComponent } from './shopping.component';
 
-const shoppingListRoutes = [
+const shoppingListRoutes: Routes = [
     {path: 'shopping-list', component: ShoppingComponent},
 ];
 
