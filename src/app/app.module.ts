@@ -1,14 +1,13 @@
 // Framework Modules
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 // Feature Modules
-import { SharedModule } from './shared/shared.module';
-import { ShoppingListModule } from './shopping/shopping-list.module';
 import { AuthModule } from './auth/auth.module';
 import { AppRoutingModule } from './app.routing.module';
 import { RecipeModule } from './recipes/recipe.module';
+import { SharedModule } from './shared/shared.module';
+import { ShoppingListModule } from './shopping/shopping-list.module';
 // Services
 import { AuthGuardService } from './auth/auth-guard.service';
 import { AuthService } from './auth/auth.service';
@@ -26,9 +25,8 @@ import { HeaderComponent } from './header/header.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    AppRoutingModule,
     HttpClientModule,
+    AppRoutingModule,
     AuthModule,
     RecipeModule,
     ShoppingListModule,
