@@ -59,7 +59,7 @@ export class AuthService {
             .then(
                 response => {
                     this.token = null;
-                    this.router.navigate(['/']);
+                    this.router.navigate(['/recipes']);
                 }
             );
     }
