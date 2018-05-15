@@ -9,7 +9,7 @@ import { AuthService } from '../auth/auth.service';
 @Injectable()
 export class DataStorageServices {
 
-    url = 'https://irecipies-b89ad.firebaseio.com/recipes.json' + '?auth=';
+    url = 'https://irecipies-b89ad.firebaseio.com/recipes.json';
 
     constructor(
         private http: HttpClient,
@@ -18,15 +18,13 @@ export class DataStorageServices {
     ) { }
 
     storeRecipes() {
-        const token = this.auth.getToken();
         return this.http.put(
-            this.url + token,
+            this.url,
             this.recipeService.getRecipes());
     }
 
     getRecipes() {
-        const token = this.auth.getToken();
-        this.http.get<Recipe[]>(this.url + token)
+        this.http.get<Recipe[]>(this.url)
             .pipe(
                 map(
                     (recipes: Recipe[]) => {

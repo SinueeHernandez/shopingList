@@ -10,6 +10,8 @@ import { ShoppingListService } from '../services/shopping-list.service';
 import { DataStorageServices } from '../shared/data-storage.services';
 import { AuthService } from '../auth/auth.service';
 import { AuthGuardService } from '../auth/auth-guard.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from '../shared/auth.interceptor';
 
 @NgModule({
     declarations: [
@@ -30,7 +32,12 @@ import { AuthGuardService } from '../auth/auth-guard.service';
         ShoppingListService,
         DataStorageServices,
         AuthService,
-        AuthGuardService
-      ],
+        AuthGuardService,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: AuthInterceptor,
+            multi: true
+        }
+    ],
 })
-export class CoreModule {}
+export class CoreModule { }
